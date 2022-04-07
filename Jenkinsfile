@@ -7,9 +7,11 @@ pipeline {
 
     stages {
          stage('checkout') {
-            steps {
-                git 'https://github.com/arjunachari12/jenkins-terraform'
-            }
+             steps {
+        git([url: 'https://github.com/arjunachari12/jenkins-terraform.git', branch: 'master'])
+
+           }
+              
         }
         stage('Terraform Init') {
             steps {
